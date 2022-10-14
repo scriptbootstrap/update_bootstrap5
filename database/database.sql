@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Okt 2022 pada 01.15
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
+-- Generation Time: Oct 14, 2022 at 01:58 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bahkn`
+-- Table structure for table `tb_bahkn`
 --
 
 CREATE TABLE `tb_bahkn` (
@@ -48,17 +48,10 @@ CREATE TABLE `tb_bahkn` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bahkn`
---
-
-INSERT INTO `tb_bahkn` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `jmlh_penawaran`, `jmlh_negosiasi`, `nama_pp`, `nama_wakil_penyedia`, `tgl_buat`) VALUES
-(7, 3, '2022-10-14', 'RAKORTEK-KAOS', 'Jumat', 'Empat Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', '13475000', '13328000', 'DEISY D.A TAHA', 'SULAIMAN', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bahp`
+-- Table structure for table `tb_bahp`
 --
 
 CREATE TABLE `tb_bahp` (
@@ -86,17 +79,10 @@ CREATE TABLE `tb_bahp` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bahp`
---
-
-INSERT INTO `tb_bahp` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nomor_npwp`, `nama_pekerjaan`, `tahun_anggaran`, `kode_rup`, `harga_penawaran`, `harga_negosiasi`, `nomor_dipa`, `tgl_dipa`, `nama_pp`, `nip`, `tgl_buat`) VALUES
-(5, 3, '2022-10-14', 'RAKORTEK-KAOS', 'Jumat', 'Empat Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', '53.202.570.7-831.000', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', '123123123123123', '13475000', '13328000', 'SP DIPA-054.01.2.636900/2022', '2022-10-13', 'DEISY D.A TAHA', '197812102001122001', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bahpp`
+-- Table structure for table `tb_bahpp`
 --
 
 CREATE TABLE `tb_bahpp` (
@@ -126,17 +112,10 @@ CREATE TABLE `tb_bahpp` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bahpp`
---
-
-INSERT INTO `tb_bahpp` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `alamat_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `nama_wakil_penyedia`, `jabatan`, `nama_ppk`, `nama_perwakilan_sm`, `nama_petugas_verifikasi_mdp`, `nama_pendukung1`, `nama_pendukung2`, `jenis_surat`, `no_jenis_surat`, `tgl_buat`) VALUES
-(2, 3, '2022-10-14', 'RAKORTEK-KAOS', 'Jumat', 'Empat Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'Jalan Prof. Dr. Aloe Saboe No. 117 Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SULAIMAN', 'Direktur', 'DEPIT RUDIANTO', 'Wahu Usman', 'Wandi Ahmad', 'Cinta Paputungan', 'Widya Mokodompit', 'Surat Pesanan', '10.13/SPes/RAKORTEK-KAOS/PP/X/2022', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bap`
+-- Table structure for table `tb_bap`
 --
 
 CREATE TABLE `tb_bap` (
@@ -167,17 +146,10 @@ CREATE TABLE `tb_bap` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bap`
---
-
-INSERT INTO `tb_bap` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `alamat_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `nama_wakil_penyedia`, `jabatan`, `no_bast`, `jenis_surat`, `no_jenis_surat`, `no_dipa`, `tgl_dipa`, `pembayaran_resmi`, `nama_ppk`, `nip`, `tgl_buat`) VALUES
-(2, 3, '2022-10-14', 'RAKORTEK-KAOS', 'Jumat', 'Empat Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'Jalan Prof. Dr. Aloe Saboe No. 117 Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SULAIMAN', 'Direktur', '10.12/BAST/RAKORTEK-KAOS/PPK/X/2022', 'Surat Pesanan', '10.13/SPes/RAKORTEK-KAOS/PP/X/2022', 'SP DIPA-054.01.2.636900/2022', '2022-10-13', '13328000', 'DEPIT RUDIANTO', '198606302009121003', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_baphk`
+-- Table structure for table `tb_baphk`
 --
 
 CREATE TABLE `tb_baphk` (
@@ -203,17 +175,10 @@ CREATE TABLE `tb_baphk` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_baphk`
---
-
-INSERT INTO `tb_baphk` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `nama_perusahaan`, `alamat_perusahaan`, `no_izin_usaha`, `tgl_terbit_nib`, `perubahan_ke`, `nomor_npwp`, `nama_pekerjaan`, `tahun_anggaran`, `nama_pp`, `nama_wakil_penyedia`, `tgl_buat`) VALUES
-(11, 3, '2022-11-06', 'RAKORTEK-KAOS', 'Jumat', 'Empat Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', '1234444', '2022-10-14', '4', '53.202.570.7-831.000', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'DEISY D.A TAHA', 'SULAIMAN', '14 Oct 2022');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bapp`
+-- Table structure for table `tb_bapp`
 --
 
 CREATE TABLE `tb_bapp` (
@@ -241,17 +206,10 @@ CREATE TABLE `tb_bapp` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bapp`
---
-
-INSERT INTO `tb_bapp` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `alamat_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `nama_wakil_penyedia`, `jabatan`, `no_bahpp`, `jenis_surat`, `no_jenis_surat`, `nama_ppk`, `nip`, `tgl_buat`) VALUES
-(1, 3, '2022-10-13', 'RAKORTEK-KAOS', 'Kamis', 'Tiga Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'Jalan Prof. Dr. Aloe Saboe No. 117 Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SULAIMAN', 'Direktur', '10.13/BAHPP/RAKORTEK-KAOS/PPK/X/2022', 'Surat Pesanan', '10.13/SPes/RAKORTEK-KAOS/PP/X/2022', 'DEPIT RUDIANTO', '198606302009121003', '2022-10-13');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_barang_jasa`
+-- Table structure for table `tb_barang_jasa`
 --
 
 CREATE TABLE `tb_barang_jasa` (
@@ -282,7 +240,7 @@ CREATE TABLE `tb_barang_jasa` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bast`
+-- Table structure for table `tb_bast`
 --
 
 CREATE TABLE `tb_bast` (
@@ -310,17 +268,10 @@ CREATE TABLE `tb_bast` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_bast`
---
-
-INSERT INTO `tb_bast` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `hari_terbilang`, `tgl_terbilang`, `bln_terbilang`, `thn_terbilang`, `nama_satker`, `alamat_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `nama_wakil_penyedia`, `jabatan`, `no_bapp`, `jenis_surat`, `no_jenis_surat`, `nama_ppk`, `nip`, `tgl_buat`) VALUES
-(5, 3, '2022-10-12', 'RAKORTEK-KAOS', 'Kamis', 'Tiga Belas', 'Oktober', 'Dua Ribu Dua Puluh Dua', 'Provinsi Gorontalo', 'Jalan Prof. Dr. Aloe Saboe No. 117 Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SULAIMAN', 'Direktur', '10.13/BAPP/RAKORTEK-KAOS/PPK/X/2022', 'Surat Pesanan', '10.13/SPes/RAKORTEK-KAOS/PP/X/2022', 'DEPIT RUDIANTO', '198606302009121003', '13 Oct 2022');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kwitansi`
+-- Table structure for table `tb_kwitansi`
 --
 
 CREATE TABLE `tb_kwitansi` (
@@ -342,17 +293,10 @@ CREATE TABLE `tb_kwitansi` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_kwitansi`
---
-
-INSERT INTO `tb_kwitansi` (`id`, `id_user`, `nama_tempat`, `tgl_surat`, `nama_satker`, `nama_perusahaan`, `nama_pekerjaan`, `tahun_anggaran`, `nama_wakil_penyedia`, `jabatan`, `jenis_surat`, `no_jenis_surat`, `pembayaran_resmi`, `nama_ppk`, `nip`, `tgl_buat`) VALUES
-(1, 3, 'Gorontalo', '2022-10-14', 'Provinsi Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SULAIMAN', 'Direktur', 'Surat Pesanan', '10.13/SPes/RAKORTEK-KAOS/PP/X/2022', '13328000', 'DEPIT RUDIANTO', '198606302009121003', '14 Oct 2022');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_memo`
+-- Table structure for table `tb_memo`
 --
 
 CREATE TABLE `tb_memo` (
@@ -368,17 +312,10 @@ CREATE TABLE `tb_memo` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_memo`
---
-
-INSERT INTO `tb_memo` (`id`, `id_user`, `nama_satker`, `nama_pekerjaan`, `tgl_terbit`, `tahun_anggaran`, `tgl_permintaan`, `fungsi`, `nama_ppk`, `tgl_buat`) VALUES
-(2, 3, 'Provinsi Gorontalo', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022-10-13', '2022', '2022-10-13', 'Ini fungsi', 'DEPIT RUDIANTO', '2022-10-13');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_akun`
+-- Table structure for table `tb_pa_akun`
 --
 
 CREATE TABLE `tb_pa_akun` (
@@ -388,7 +325,7 @@ CREATE TABLE `tb_pa_akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_akun`
+-- Dumping data for table `tb_pa_akun`
 --
 
 INSERT INTO `tb_pa_akun` (`id`, `kode`, `uraian`) VALUES
@@ -433,7 +370,7 @@ INSERT INTO `tb_pa_akun` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_kegiatan`
+-- Table structure for table `tb_pa_kegiatan`
 --
 
 CREATE TABLE `tb_pa_kegiatan` (
@@ -443,7 +380,7 @@ CREATE TABLE `tb_pa_kegiatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_kegiatan`
+-- Dumping data for table `tb_pa_kegiatan`
 --
 
 INSERT INTO `tb_pa_kegiatan` (`id`, `kode`, `uraian`) VALUES
@@ -466,7 +403,7 @@ INSERT INTO `tb_pa_kegiatan` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_komponen`
+-- Table structure for table `tb_pa_komponen`
 --
 
 CREATE TABLE `tb_pa_komponen` (
@@ -476,7 +413,7 @@ CREATE TABLE `tb_pa_komponen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_komponen`
+-- Dumping data for table `tb_pa_komponen`
 --
 
 INSERT INTO `tb_pa_komponen` (`id`, `kode`, `uraian`) VALUES
@@ -502,7 +439,7 @@ INSERT INTO `tb_pa_komponen` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_output`
+-- Table structure for table `tb_pa_output`
 --
 
 CREATE TABLE `tb_pa_output` (
@@ -512,7 +449,7 @@ CREATE TABLE `tb_pa_output` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_output`
+-- Dumping data for table `tb_pa_output`
 --
 
 INSERT INTO `tb_pa_output` (`id`, `kode`, `uraian`) VALUES
@@ -535,7 +472,7 @@ INSERT INTO `tb_pa_output` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_program`
+-- Table structure for table `tb_pa_program`
 --
 
 CREATE TABLE `tb_pa_program` (
@@ -545,7 +482,7 @@ CREATE TABLE `tb_pa_program` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_program`
+-- Dumping data for table `tb_pa_program`
 --
 
 INSERT INTO `tb_pa_program` (`id`, `kode`, `uraian`) VALUES
@@ -555,7 +492,7 @@ INSERT INTO `tb_pa_program` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_sub_komponen`
+-- Table structure for table `tb_pa_sub_komponen`
 --
 
 CREATE TABLE `tb_pa_sub_komponen` (
@@ -565,7 +502,7 @@ CREATE TABLE `tb_pa_sub_komponen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_sub_komponen`
+-- Dumping data for table `tb_pa_sub_komponen`
 --
 
 INSERT INTO `tb_pa_sub_komponen` (`id`, `kode`, `uraian`) VALUES
@@ -579,7 +516,7 @@ INSERT INTO `tb_pa_sub_komponen` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pa_sub_output`
+-- Table structure for table `tb_pa_sub_output`
 --
 
 CREATE TABLE `tb_pa_sub_output` (
@@ -589,7 +526,7 @@ CREATE TABLE `tb_pa_sub_output` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pa_sub_output`
+-- Dumping data for table `tb_pa_sub_output`
 --
 
 INSERT INTO `tb_pa_sub_output` (`id`, `kode`, `uraian`) VALUES
@@ -628,7 +565,7 @@ INSERT INTO `tb_pa_sub_output` (`id`, `kode`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pibu`
+-- Table structure for table `tb_pibu`
 --
 
 CREATE TABLE `tb_pibu` (
@@ -646,17 +583,10 @@ CREATE TABLE `tb_pibu` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_pibu`
---
-
-INSERT INTO `tb_pibu` (`id`, `id_user`, `nama_wakil_penyedia`, `jabatan`, `alamat_perusahaan`, `nama_perusahaan`, `nama_pekerjaan`, `nama_satker`, `tahun_anggaran`, `nama_tempat`, `tgl_surat`, `tgl_buat`) VALUES
-(5, 3, 'SULAIMAN', 'Direktur', 'Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', 'Provinsi Gorontalo', '2022', 'Gorontalo', '2022-10-14', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pip`
+-- Table structure for table `tb_pip`
 --
 
 CREATE TABLE `tb_pip` (
@@ -674,17 +604,10 @@ CREATE TABLE `tb_pip` (
   `tgl_buat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_pip`
---
-
-INSERT INTO `tb_pip` (`id`, `id_user`, `nama`, `no_identitas`, `alamat_ktp`, `pekerjaan`, `nama_pekerjaan`, `nama_satker`, `tahun_anggaran`, `nama_tempat`, `tgl_surat`, `tgl_buat`) VALUES
-(6, 3, 'Singgi', '1213123124', 'Paret Timur', 'Petani', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', 'Provinsi Gorontalo', '2022', 'Gorontalo', '2022-10-14', '2022-10-14');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_satker`
+-- Table structure for table `tb_satker`
 --
 
 CREATE TABLE `tb_satker` (
@@ -694,7 +617,7 @@ CREATE TABLE `tb_satker` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_satker`
+-- Dumping data for table `tb_satker`
 --
 
 INSERT INTO `tb_satker` (`id_satker`, `uraian_satker`, `kode_satker`) VALUES
@@ -709,7 +632,7 @@ INSERT INTO `tb_satker` (`id_satker`, `uraian_satker`, `kode_satker`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_search`
+-- Table structure for table `tb_search`
 --
 
 CREATE TABLE `tb_search` (
@@ -721,7 +644,7 @@ CREATE TABLE `tb_search` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_search`
+-- Dumping data for table `tb_search`
 --
 
 INSERT INTO `tb_search` (`id_search`, `title_search`, `description_search`, `url_search`, `tag_search`) VALUES
@@ -753,7 +676,7 @@ INSERT INTO `tb_search` (`id_search`, `title_search`, `description_search`, `url
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_spes`
+-- Table structure for table `tb_spes`
 --
 
 CREATE TABLE `tb_spes` (
@@ -793,17 +716,10 @@ CREATE TABLE `tb_spes` (
   `tgl_buat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_spes`
---
-
-INSERT INTO `tb_spes` (`id`, `id_user`, `tgl_surat`, `no_kegiatan`, `nama_satker`, `alamat_satker`, `nama_perusahaan`, `alamat_perusahaan`, `nama_wakil_penyedia`, `nama_pekerjaan`, `tahun_anggaran`, `nomor_dipa`, `tgl_bln_thn_dipa`, `program`, `kegiatan`, `output`, `sub_output`, `komponen`, `sub_komponen`, `akun`, `rincian_pok`, `from_tgl`, `to_tgl`, `nip`, `jabatan`, `nama_tempat`, `jenis_spesifikasi`, `satuan`, `vol`, `harga_satuan`, `ppn`, `keterangan`, `nama_pp`, `tgl_buat`) VALUES
-(10, 3, '2022-10-13', 'RAKORTEK-KAOS', 'Provinsi Gorontalo', 'Jalan Prof. Dr. Aloe Saboe No. 117 Gorontalo', 'CV. YUKENSI SUKES SEJAHTERA', 'Gorontalo', 'SULAIMAN', 'Pengadaan Kaos Perlengkapan Peserta Rakortek LF SP2020', '2022', 'SP DIPA-054.01.2.636900/2022', '2022-10-13', '(GG) Program Penyediaan dan Pelayanan Informasi Statistik', '(2896) Pengembangan dan Analisis Statistik', '(BDB) Fasilitasi dan Pembinaan Lembaga', '(003) LAPORAN PENYELENGGARAAN SISTEM STATISTIK NASIONAL (SSN)', '(052) PENGUMPULAN DATA', '(A) TANPA SUB KOMPONEN', '(522151) Belanja Jasa Profesi', 'Perlengkapan Rapat Koordinasi Teknik Daerah', '2022-10-13', '2022-10-15', '197812102001122001', 'Direktur', 'Gorontalo', 'Kaos', 'Buah', '98', '136000', '0', '', 'DEISY D.A TAHA', '2022-10-13');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_users`
+-- Table structure for table `tb_users`
 --
 
 CREATE TABLE `tb_users` (
@@ -819,7 +735,7 @@ CREATE TABLE `tb_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_users`
+-- Dumping data for table `tb_users`
 --
 
 INSERT INTO `tb_users` (`id`, `gambar`, `first_name`, `last_name`, `username`, `nip`, `password`, `password2`, `level`) VALUES
@@ -830,7 +746,7 @@ INSERT INTO `tb_users` (`id`, `gambar`, `first_name`, `last_name`, `username`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user_guide`
+-- Table structure for table `tb_user_guide`
 --
 
 CREATE TABLE `tb_user_guide` (
@@ -839,7 +755,7 @@ CREATE TABLE `tb_user_guide` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_user_guide`
+-- Dumping data for table `tb_user_guide`
 --
 
 INSERT INTO `tb_user_guide` (`id`, `description`) VALUES
@@ -848,7 +764,7 @@ INSERT INTO `tb_user_guide` (`id`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user_guide_img`
+-- Table structure for table `tb_user_guide_img`
 --
 
 CREATE TABLE `tb_user_guide_img` (
@@ -861,305 +777,305 @@ CREATE TABLE `tb_user_guide_img` (
 --
 
 --
--- Indeks untuk tabel `tb_bahkn`
+-- Indexes for table `tb_bahkn`
 --
 ALTER TABLE `tb_bahkn`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_bahp`
+-- Indexes for table `tb_bahp`
 --
 ALTER TABLE `tb_bahp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_bahpp`
+-- Indexes for table `tb_bahpp`
 --
 ALTER TABLE `tb_bahpp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_bap`
+-- Indexes for table `tb_bap`
 --
 ALTER TABLE `tb_bap`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_baphk`
+-- Indexes for table `tb_baphk`
 --
 ALTER TABLE `tb_baphk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_bapp`
+-- Indexes for table `tb_bapp`
 --
 ALTER TABLE `tb_bapp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_barang_jasa`
+-- Indexes for table `tb_barang_jasa`
 --
 ALTER TABLE `tb_barang_jasa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_bast`
+-- Indexes for table `tb_bast`
 --
 ALTER TABLE `tb_bast`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_kwitansi`
+-- Indexes for table `tb_kwitansi`
 --
 ALTER TABLE `tb_kwitansi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_memo`
+-- Indexes for table `tb_memo`
 --
 ALTER TABLE `tb_memo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_akun`
+-- Indexes for table `tb_pa_akun`
 --
 ALTER TABLE `tb_pa_akun`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_kegiatan`
+-- Indexes for table `tb_pa_kegiatan`
 --
 ALTER TABLE `tb_pa_kegiatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_komponen`
+-- Indexes for table `tb_pa_komponen`
 --
 ALTER TABLE `tb_pa_komponen`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_output`
+-- Indexes for table `tb_pa_output`
 --
 ALTER TABLE `tb_pa_output`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_program`
+-- Indexes for table `tb_pa_program`
 --
 ALTER TABLE `tb_pa_program`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_sub_komponen`
+-- Indexes for table `tb_pa_sub_komponen`
 --
 ALTER TABLE `tb_pa_sub_komponen`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pa_sub_output`
+-- Indexes for table `tb_pa_sub_output`
 --
 ALTER TABLE `tb_pa_sub_output`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pibu`
+-- Indexes for table `tb_pibu`
 --
 ALTER TABLE `tb_pibu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pip`
+-- Indexes for table `tb_pip`
 --
 ALTER TABLE `tb_pip`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_satker`
+-- Indexes for table `tb_satker`
 --
 ALTER TABLE `tb_satker`
   ADD PRIMARY KEY (`id_satker`);
 
 --
--- Indeks untuk tabel `tb_search`
+-- Indexes for table `tb_search`
 --
 ALTER TABLE `tb_search`
   ADD PRIMARY KEY (`id_search`);
 
 --
--- Indeks untuk tabel `tb_spes`
+-- Indexes for table `tb_spes`
 --
 ALTER TABLE `tb_spes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_users`
+-- Indexes for table `tb_users`
 --
 ALTER TABLE `tb_users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_user_guide`
+-- Indexes for table `tb_user_guide`
 --
 ALTER TABLE `tb_user_guide`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_user_guide_img`
+-- Indexes for table `tb_user_guide_img`
 --
 ALTER TABLE `tb_user_guide_img`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bahkn`
+-- AUTO_INCREMENT for table `tb_bahkn`
 --
 ALTER TABLE `tb_bahkn`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bahp`
+-- AUTO_INCREMENT for table `tb_bahp`
 --
 ALTER TABLE `tb_bahp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bahpp`
+-- AUTO_INCREMENT for table `tb_bahpp`
 --
 ALTER TABLE `tb_bahpp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bap`
+-- AUTO_INCREMENT for table `tb_bap`
 --
 ALTER TABLE `tb_bap`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_baphk`
+-- AUTO_INCREMENT for table `tb_baphk`
 --
 ALTER TABLE `tb_baphk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bapp`
+-- AUTO_INCREMENT for table `tb_bapp`
 --
 ALTER TABLE `tb_bapp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_barang_jasa`
+-- AUTO_INCREMENT for table `tb_barang_jasa`
 --
 ALTER TABLE `tb_barang_jasa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bast`
+-- AUTO_INCREMENT for table `tb_bast`
 --
 ALTER TABLE `tb_bast`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kwitansi`
+-- AUTO_INCREMENT for table `tb_kwitansi`
 --
 ALTER TABLE `tb_kwitansi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_memo`
+-- AUTO_INCREMENT for table `tb_memo`
 --
 ALTER TABLE `tb_memo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_akun`
+-- AUTO_INCREMENT for table `tb_pa_akun`
 --
 ALTER TABLE `tb_pa_akun`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_kegiatan`
+-- AUTO_INCREMENT for table `tb_pa_kegiatan`
 --
 ALTER TABLE `tb_pa_kegiatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_komponen`
+-- AUTO_INCREMENT for table `tb_pa_komponen`
 --
 ALTER TABLE `tb_pa_komponen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_output`
+-- AUTO_INCREMENT for table `tb_pa_output`
 --
 ALTER TABLE `tb_pa_output`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_program`
+-- AUTO_INCREMENT for table `tb_pa_program`
 --
 ALTER TABLE `tb_pa_program`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_sub_komponen`
+-- AUTO_INCREMENT for table `tb_pa_sub_komponen`
 --
 ALTER TABLE `tb_pa_sub_komponen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pa_sub_output`
+-- AUTO_INCREMENT for table `tb_pa_sub_output`
 --
 ALTER TABLE `tb_pa_sub_output`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pibu`
+-- AUTO_INCREMENT for table `tb_pibu`
 --
 ALTER TABLE `tb_pibu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pip`
+-- AUTO_INCREMENT for table `tb_pip`
 --
 ALTER TABLE `tb_pip`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_satker`
+-- AUTO_INCREMENT for table `tb_satker`
 --
 ALTER TABLE `tb_satker`
   MODIFY `id_satker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_search`
+-- AUTO_INCREMENT for table `tb_search`
 --
 ALTER TABLE `tb_search`
   MODIFY `id_search` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_spes`
+-- AUTO_INCREMENT for table `tb_spes`
 --
 ALTER TABLE `tb_spes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_users`
+-- AUTO_INCREMENT for table `tb_users`
 --
 ALTER TABLE `tb_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user_guide`
+-- AUTO_INCREMENT for table `tb_user_guide`
 --
 ALTER TABLE `tb_user_guide`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user_guide_img`
+-- AUTO_INCREMENT for table `tb_user_guide_img`
 --
 ALTER TABLE `tb_user_guide_img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;

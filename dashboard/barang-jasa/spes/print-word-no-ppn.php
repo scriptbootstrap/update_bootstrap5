@@ -60,6 +60,8 @@ $totalHargaTerbilang = $_POST["total_harga_terbilang"];
 $keterangan = $_POST["keterangan"];
 $namaPp = $_POST["nama_pp"];
 $nip = $_POST["nip"];
+$jmlhNegosiasi = $_POST["jmlh_negosiasi"];
+$jmlhNegosiasiTerbilang = $_POST["jmlh_negosiasi_terbilang"];
 
 // memanggil dan membaca template dokumen yang telah kita buat
 $document = file_get_contents("spes_no_ppn.rtf");
@@ -103,6 +105,8 @@ $document = str_replace("%%total_harga_terbilang%%", $totalHargaTerbilang, $docu
 $document = str_replace("%%keterangan%%", $keterangan, $document);
 $document = str_replace("%%nama_pp%%", $namaPp, $document);
 $document = str_replace("%%nip%%", $nip, $document);
+$document = str_replace("%%jmlh_negosiasi%%", $jmlhNegosiasi, $document);
+$document = str_replace("%%jmlh_negosiasi_terbilang%%", $jmlhNegosiasiTerbilang, $document);
 // header untuk membuka file output RTF dengan MS. Word
 header("Content-type: application/msword");
 header("Content-disposition: inline; filename=6_PP_Surat Pesanan.doc");

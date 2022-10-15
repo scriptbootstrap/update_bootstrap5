@@ -438,14 +438,14 @@ include("../../../include/seo.php");
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
+									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
 											<input id="vol" name="vol" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdSpes["vol"]; ?>">
 											<label for="vol" class="placeholder"><i class="bi bi-hdd"></i> VOL</label>
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
+									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
 											<input id="jmlh_penawaran" name="harga_satuan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdSpes["harga_satuan"]; ?>">
 											<label for="jmlh_penawaran" class="placeholder"><i class="bi bi-cash-stack"></i> Harga Satuan</label>
@@ -473,7 +473,7 @@ include("../../../include/seo.php");
 
 									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="keterangan" name="keterangan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdSpes["keterangan"]; ?>">
+											<input id="keterangan" name="keterangan" type="text" class="form-control input-border-bottom" value="<?= $queryIdSpes["keterangan"]; ?>">
 											<label for="keterangan" class="placeholder"><i class="bi bi-card-list"></i> Keterangan</label>
 										</div>
 									</div>
@@ -505,6 +505,13 @@ include("../../../include/seo.php");
 												<?php endforeach; ?>
 											</select>
 											<label for="nama_ppk" class="placeholder"><i class="bi bi-person-fill"></i> NIP <sup>PP</sup></label>
+										</div>
+									</div>
+
+									<div class="form-add" hidden>
+										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+											<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdSpes["jmlh_negosiasi"]; ?>">
+											<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash-stack"></i> Jumlah Negosiasi</label>
 										</div>
 									</div>
 

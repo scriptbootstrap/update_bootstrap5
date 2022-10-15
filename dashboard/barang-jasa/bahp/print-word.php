@@ -45,7 +45,7 @@ $hargaNegosiasiTerbilang = $_POST["harga_negosiasi_terbilang"];
 $selisih = $_POST["selisih"];
 $selisihTerbilang = $_POST["selisih_terbilang"];
 $nomorDipa = $_POST["nomor_dipa"];
-$tglSurat = $_POST["tgl_bln_thn"];
+$tglDipa = $_POST["tgl_dipa"];
 $namaPp = $_POST["nama_pp"];
 $nip = $_POST["nip"];
 // memanggil dan membaca template dokumen yang telah kita buat
@@ -75,7 +75,7 @@ $document = str_replace("%%harga_negosiasi_terbilang%%", $hargaNegosiasiTerbilan
 $document = str_replace("%%selisih%%", $selisih, $document);
 $document = str_replace("%%selisih_terbilang%%", $selisihTerbilang, $document);
 $document = str_replace("%%nomor_dipa%%", $nomorDipa, $document);
-$document = str_replace("%%tgl_bln_thn%%", $tglSurat, $document);
+$document = str_replace("%%tgl_dipa%%", $tglDipa, $document);
 $document = str_replace("%%nama_pp%%", $namaPp, $document);
 $document = str_replace("%%nip%%", $nip, $document);
 // header untuk membuka file output RTF dengan MS. Word

@@ -225,17 +225,18 @@ include("../../../include/seo.php");
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="nama_tempat" name="nama_tempat" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_tempat"]; ?>">
-											<label for="nama_tempat" class="placeholder"><i class="bi bi-map-fill"></i> Nama Tempat</label>
-										</div>
-									</div>
 
 									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
 											<label for="tgl_surat"><i class="bi bi-calendar2-date-fill"></i> Tanggal Surat</label>
 											<input id="tgl_surat" name="tgl_surat" type="date" class="form-control input-border-bottom" required="">
+										</div>
+									</div>
+
+									<div class="form-add">
+										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+											<input id="nama_tempat" name="nama_tempat" type="text" class="form-control input-border-bottom" required="">
+											<label for="nama_tempat" class="placeholder"><i class="bi bi-map-fill"></i> Nama Tempat</label>
 										</div>
 									</div>
 

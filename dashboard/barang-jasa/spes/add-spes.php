@@ -438,16 +438,16 @@ include("../../../include/seo.php");
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
+									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="vol" name="vol" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["vol"]; ?>">
-											<label for="vol" class="placeholder"><i class="bi bi-hdd"></i> VOL</label>
+											<input id="vol" name="vol" type="text" class="form-control input-border-bottom" required="">
+											<label for=" vol" class="placeholder"><i class="bi bi-hdd"></i> VOL</label>
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
+									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="jmlh_penawaran" name="harga_satuan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["harga_satuan"]; ?>">
+											<input id="jmlh_penawaran" name="harga_satuan" type="text" class="form-control input-border-bottom" required="" value="">
 											<label for="jmlh_penawaran" class="placeholder"><i class="bi bi-cash-stack"></i> Harga Satuan</label>
 										</div>
 									</div>
@@ -456,7 +456,7 @@ include("../../../include/seo.php");
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
 											<br>
 											<select id="ppn" name="ppn" class="form-control input-border-bottom" required oninvalid="this.setCustomValidity('PPN harus diisi!')" oninput="setCustomValidity('')" placeholder=" " autocomplete="off">
-												<option value="<?= $queryIdBarangJasa["ppn"]; ?>"></option>
+												<option value="<?= $queryIdBarangJasa["ppn"]; ?>"><?= $queryIdBarangJasa["ppn"]; ?></option>
 											</select>
 											<label for="ppn" class="placeholder"><i class="bi bi-percent mb-2"></i> PILIH PPN</label>
 										</div>
@@ -490,6 +490,24 @@ include("../../../include/seo.php");
 											<label for="nama_ppk" class="placeholder"><i class="bi bi-person-fill"></i> NIP <sup>PP</sup></label>
 										</div>
 									</div>
+
+									<?php if ($queryIdBarangJasa["ppn"] === "0") : ?>
+										<div class="form-add" hidden>
+											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
+												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
+											</div>
+										</div>
+									<?php endif; ?>
+
+									<?php if ($queryIdBarangJasa["ppn"] === "1") : ?>
+										<div class="form-add" hidden>
+											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= (11 / 100) * $queryIdBarangJasa["jmlh_negosiasi"] + $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
+												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
+											</div>
+										</div>
+									<?php endif; ?>
 
 									<input type="hidden" name="tgl_buat" value="<?= base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($tbh))))))))); ?>">
 

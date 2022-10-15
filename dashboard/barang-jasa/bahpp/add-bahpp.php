@@ -29,6 +29,7 @@ if (isset($_GET["id_barang_jasa"])) {
 }
 
 
+
 // check empty account
 if (empty($rowSession["id"])) {
 	header("Location:../../../auth/logout");

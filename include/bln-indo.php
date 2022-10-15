@@ -1,6 +1,6 @@
 <?php
 // FORMAT TANGGAL INDONESIA
-function tgl_indo($tanggal)
+function bln_indo($tanggal)
 {
 	$bulan = array(
 		1 =>   'Januari',
@@ -18,5 +18,5 @@ function tgl_indo($tanggal)
 	);
 	$pecahkan = explode('-', $tanggal);
 
-	return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
+	return $bulan[(int)$pecahkan[1]];
 }

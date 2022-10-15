@@ -336,8 +336,8 @@ include("../../../include/seo.php");
 									<?php if ($queryIdBarangJasa["ppn"] === "0") : ?>
 										<div class="form-add" hidden>
 											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="pembayaran_resmi" name="pembayaran_resmi" type="text" class="form-control input-border-bottom" required="" value="<?= number_format($queryIdBarangJasa["harga_satuan"] * $queryIdBarangJasa["vol"], 0, ',', '.'); ?>">
-												<label for="pembayaran_resmi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
+												<input id="jmlh_negosiasi" name="pembayaran_resmi" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
+												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
 											</div>
 										</div>
 									<?php endif; ?>
@@ -345,8 +345,8 @@ include("../../../include/seo.php");
 									<?php if ($queryIdBarangJasa["ppn"] === "1") : ?>
 										<div class="form-add" hidden>
 											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="pembayaran_resmi" name="pembayaran_resmi" type="text" class="form-control input-border-bottom" required="" value="<?php include("_rounded.php"); ?>">
-												<label for="pembayaran_resmi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
+												<input id="jmlh_negosiasi" name="pembayaran_resmi" type="text" class="form-control input-border-bottom" required="" value="<?= (11 / 100) * $queryIdBarangJasa["jmlh_negosiasi"] + $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
+												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
 											</div>
 										</div>
 									<?php endif; ?>
@@ -372,6 +372,7 @@ include("../../../include/seo.php");
 											<label for="nip" class="placeholder"><i class="bi bi-person-fill"></i> NIP <sup>PPK</sup></label>
 										</div>
 									</div>
+
 
 									<input type="hidden" name="tgl_buat" value="<?= base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($tbh))))))))); ?>">
 

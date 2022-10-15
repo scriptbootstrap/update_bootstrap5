@@ -231,9 +231,9 @@ include("../../../include/seo.php");
 										</div>
 									</div>
 
-									<div class="form-add" hidden>
+									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="nama_tempat" name="nama_tempat" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_tempat"]; ?>">
+											<input id="nama_tempat" name="nama_tempat" type="text" class="form-control input-border-bottom" required="">
 											<label for="nama_tempat" class="placeholder"><i class="bi bi-map-fill"></i> Nama Tempat</label>
 										</div>
 									</div>

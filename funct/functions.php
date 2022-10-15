@@ -349,15 +349,14 @@ function addPaket($data)
   $jabatanWakilPenyedia = htmlspecialchars($data["jabatan_wakil_penyedia"]);
   $npwp = htmlspecialchars($data["npwp"]);
   $jmlhPenawaran = htmlspecialchars($data["jmlh_penawaran"]);
-  $namaTempat = htmlspecialchars($data["nama_tempat"]);
-  $vol = htmlspecialchars($data["vol"]);
-  $hargaSatuan = htmlspecialchars($data["harga_satuan"]);
+  $jmlhNegosiasi = htmlspecialchars($data["jmlh_negosiasi"]);
   $ppn = htmlspecialchars($data["ppn"]);
+  $namaTempat = htmlspecialchars($data["nama_tempat"]);
 
   $jmlhPenawaran = preg_replace("/[^0-9]/", "", $jmlhPenawaran);
-  $hargaSatuan = preg_replace("/[^0-9]/", "", $hargaSatuan);
+  $jmlhNegosiasi = preg_replace("/[^0-9]/", "", $jmlhNegosiasi);
 
-  $query = "INSERT INTO tb_barang_jasa VALUES(null, '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan', '$namaKegiatan', '$namaPekerjaan', '$tahunAnggaran', '$noDipa', '$tglDipa', '$namaPPK', '$nipPPK', '$namaPP', '$nipPP', '$namaWakilPenyedia', '$jabatanWakilPenyedia', '$npwp', '$jmlhPenawaran', '$namaTempat', '$vol', '$hargaSatuan', '$ppn') ";
+  $query = "INSERT INTO tb_barang_jasa VALUES(null, '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan', '$namaKegiatan', '$namaPekerjaan', '$tahunAnggaran', '$noDipa', '$tglDipa', '$namaPPK', '$nipPPK', '$namaPP', '$nipPP', '$namaWakilPenyedia', '$jabatanWakilPenyedia', '$npwp', '$jmlhPenawaran', '$jmlhNegosiasi', '$ppn', '$namaTempat') ";
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
@@ -387,13 +386,12 @@ function editPaket($data)
   $jabatanWakilPenyedia = htmlspecialchars($data["jabatan_wakil_penyedia"]);
   $npwp = htmlspecialchars($data["npwp"]);
   $jmlhPenawaran = htmlspecialchars($data["jmlh_penawaran"]);
-  $namaTempat = htmlspecialchars($data["nama_tempat"]);
-  $vol = htmlspecialchars($data["vol"]);
-  $hargaSatuan = htmlspecialchars($data["harga_satuan"]);
+  $jmlhNegosiasi = htmlspecialchars($data["jmlh_negosiasi"]);
   $ppn = htmlspecialchars($data["ppn"]);
+  $namaTempat = htmlspecialchars($data["nama_tempat"]);
 
   $jmlhPenawaran = preg_replace("/[^0-9]/", "", $jmlhPenawaran);
-  $hargaSatuan = preg_replace("/[^0-9]/", "", $hargaSatuan);
+  $jmlhNegosiasi = preg_replace("/[^0-9]/", "", $jmlhNegosiasi);
 
   $query = "UPDATE tb_barang_jasa SET
   nama_satker = '$namaSatker',
@@ -413,10 +411,9 @@ function editPaket($data)
   jabatan_wakil_penyedia = '$jabatanWakilPenyedia',
   npwp = '$npwp',
   jmlh_penawaran = '$jmlhPenawaran',
-  nama_tempat = '$namaTempat',
-  vol = '$vol',
-  harga_satuan = '$hargaSatuan',
-  ppn = '$ppn'
+  jmlh_negosiasi = '$jmlhNegosiasi',
+  ppn = '$ppn',
+  nama_tempat = '$namaTempat'
   WHERE id = '$id' ";
 
   mysqli_query($conn, $query);
@@ -996,11 +993,13 @@ function addSpes($data)
   $ppn = htmlspecialchars($data["ppn"]);
   $keterangan = htmlspecialchars($data["keterangan"]);
   $namaPp = htmlspecialchars($data["nama_pp"]);
+  $jmlhNegosiasi = htmlspecialchars($data["jmlh_negosiasi"]);
   $tglBuat = htmlspecialchars(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($data["tgl_buat"]))))))))));
 
   $hargaSatuan = preg_replace("/[^0-9]/", "", $hargaSatuan);
+  $jmlhNegosiasi = preg_replace("/[^0-9]/", "", $jmlhNegosiasi);
 
-  $query = "INSERT INTO tb_spes VALUES(null, '$idUser', '$tglSurat',  '$noKegiatan', '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan', '$namaWakilPenyedia', '$namaPekerjaan', '$tahunAnggaran', '$nomorDipa', '$tglBlnThnDipa', '$program', '$kegiatan', '$output', '$SubOutput', '$komponen', '$SubKomponen', '$akun', '$rincianPok', '$fromTgl', '$toTgl', '$nip', '$jabatan', '$namaTempat', '$jenisSpesifikasi', '$satuan', '$vol', '$hargaSatuan', '$ppn', '$keterangan', '$namaPp', '$tglBuat') ";
+  $query = "INSERT INTO tb_spes VALUES(null, '$idUser', '$tglSurat',  '$noKegiatan', '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan', '$namaWakilPenyedia', '$namaPekerjaan', '$tahunAnggaran', '$nomorDipa', '$tglBlnThnDipa', '$program', '$kegiatan', '$output', '$SubOutput', '$komponen', '$SubKomponen', '$akun', '$rincianPok', '$fromTgl', '$toTgl', '$nip', '$jabatan', '$namaTempat', '$jenisSpesifikasi', '$satuan', '$vol', '$hargaSatuan', '$ppn', '$keterangan', '$namaPp', '$jmlhNegosiasi', '$tglBuat') ";
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
@@ -1045,9 +1044,11 @@ function editSpes($data)
   $ppn = htmlspecialchars($data["ppn"]);
   $keterangan = htmlspecialchars($data["keterangan"]);
   $namaPp = htmlspecialchars($data["nama_pp"]);
+  $jmlhNegosiasi = htmlspecialchars($data["jmlh_negosiasi"]);
   $tglBuat = htmlspecialchars(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($data["tgl_buat"]))))))))));
 
   $hargaSatuan = preg_replace("/[^0-9]/", "", $hargaSatuan);
+  $jmlhNegosiasi = preg_replace("/[^0-9]/", "", $jmlhNegosiasi);
 
   $query = "UPDATE tb_spes SET
   id_user = '$idUser', 
@@ -1082,6 +1083,7 @@ function editSpes($data)
   ppn = '$ppn',
   keterangan = '$keterangan',
   nama_pp = '$namaPp', 
+  jmlh_negosiasi = '$jmlhNegosiasi', 
   tgl_buat = '$tglBuat'
   WHERE id = '$id' ";
 
@@ -1133,7 +1135,7 @@ function addBAHPP($data)
   $noJenisSurat = htmlspecialchars($data["no_jenis_surat"]);
   $tglBuat = htmlspecialchars(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($data["tgl_buat"]))))))))));
 
-  $query = "INSERT INTO tb_bahpp VALUES(null, '$idUser', '$tglSurat','$noKegiatan', '$hariTerbilang', '$tglTerbilang', '$blnTerbilang', '$thnTerbilang', '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan',   '$namaPekerjaan', '$tahunAnggaran', '$namaWakilPenyedia', '$jabatan', '$namaPpk', '$namaPerwakilanSm', '$namaPetugasVerifikasiMdp', '$namaPendukung1', '$namaPendukung2', '$jenisSurat', '$noJenisSurat', '$tglBuat') ";
+  $query = "INSERT INTO tb_bahpp VALUES(null, '$idUser', '$tglSurat','$noKegiatan', '$hariTerbilang', '$tglTerbilang', '$blnTerbilang', '$thnTerbilang', '$namaSatker', '$alamatSatker', '$namaPerusahaan', '$alamatPerusahaan', '$namaPekerjaan', '$tahunAnggaran', '$namaWakilPenyedia', '$jabatan', '$namaPpk', '$namaPerwakilanSm', '$namaPetugasVerifikasiMdp', '$namaPendukung1', '$namaPendukung2', '$jenisSurat', '$noJenisSurat', '$tglBuat') ";
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);

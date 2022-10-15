@@ -28,39 +28,28 @@ if (isset($_GET["id_barang_jasa"])) {
 	$queryIdBarangJasa = query("SELECT * FROM tb_barang_jasa WHERE id = '$idBarangJasa' ")[0];
 }
 
+
 // check empty account
 if (empty($rowSession["id"])) {
 	header("Location:../../../auth/logout");
 	exit;
 }
 
-
 // query table satker
 $resultSatker = query("SELECT * FROM tb_satker");
+
+$readNotificationSm = "1";
+$readAllNotificationSm = "0";
 
 // CEK LEVEL
 include("../../../include/check-level.php");
 
-if (($rowSession["level"] === $levelPPK)) {
-	header("Location:../../");
-	exit;
-}
-
 // SET DATE
 date_default_timezone_set('Asia/Makassar');
-
-// === RUMUS MEMBUAT HARI, TANGGAL, BULAN, TAHUN (MENJADI TEXT) ===
-$day = date("l");
-$tglTxt = date("d");
-$blnTxt = date("m");
-$thnText = date("Y");
 
 // tanggal, bulan, tahun
 $tbh = date("Y-m-d");
 $time = date("h:i");
-
-// Fungsi Terbilang
-include("../../../include/fungsi-terbilang.php");
 
 // Konfigurasi SEO
 include("../../../include/seo.php");
@@ -73,7 +62,7 @@ include("../../../include/seo.php");
 	<meta name="description" content="<?= $metaDescription; ?>">
 	<meta name="keywords" content="<?= $metaKeywords; ?>">
 	<meta name="author" content="<?= $metaAuthor; ?>">
-	<title>Buat Berita Acara Hasil Pengadaan Langsung - SiKuDa BaJa</title>
+	<title>Buat Memo - SiKuDa BaJa</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../../assets/img/Logo_BPS.png?v=<?= time(); ?>" type="image/x-icon" />
 
@@ -110,7 +99,7 @@ include("../../../include/seo.php");
 	<link rel="stylesheet" href="../../../assets/css/responsive.min.css?v=<?= time(); ?>" class="css">
 
 	<!-- Style Dashboard -->
-	<link rel="stylesheet" href="../../../assets/css/dashboard.min.css?v=<?= time(); ?>" class="css">
+	<link rel="stylesheet" href="../../../assets/css/dashboard.css?v=<?= time(); ?>" class="css">
 
 </head>
 
@@ -150,7 +139,7 @@ include("../../../include/seo.php");
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Buat Berita Acara Hasil Pengadaan Langsung</h4>
+						<h4 class="page-title">Buat Memo</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="../">
@@ -167,81 +156,42 @@ include("../../../include/seo.php");
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="bahp">Data Berita Acara Hasil Pengadaan Langsung</a>
+								<a href="memo">Data Memo</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Buat BAHP</a>
+								<a href="#">Buat Memo</a>
 							</li>
 						</ul>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card card-form">
-								<form action="../barang-jasa" method="post" class="user" enctype="multipart/form-data">
+								<form action="../barang-jasa.php" method="post" class="user" enctype="multipart/form-data">
 									<input type="hidden" name="id_user" value="<?= base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($rowSession["id"]))))))))); ?>">
 									<br>
 
-									<div class="form-add">
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<label for="tgl_surat"><i class="bi bi-calendar2-date-fill"></i> Tanggal Surat</label>
-											<input id="tgl_surat" name="tgl_surat" type="date" class="form-control input-border-bottom" required="">
-										</div>
-									</div>
-
 									<div class="form-add" hidden>
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="no_kegiatan" name="no_kegiatan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_kegiatan"]; ?>">
-											<label for="no_kegiatan" class="placeholder"><i class="bi bi-grid-1x2-fill"></i> Kegiatan</label>
+											<input id="nama_satker" name="nama_satker" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_satker"]; ?>">
+											<label for="nama_satker" class="placeholder"><i class="bi bi-person-workspace"></i> Nama Pekerjaan</label>
 										</div>
 									</div>
 
-									<div class="form-add">
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input hidden id="hari_terbilang" name="hari_terbilang" type="text" required="" value="<?php include("../../../include/rumus-day-text.php"); ?>">
-
-											<input hidden id="tgl_terbilang" name="tgl_terbilang" type="text" required="" value="<?= terbilang($tglTxt); ?>">
-
-											<input hidden id="bln_terbilang" name="bln_terbilang" type="text" required="" value="<?php include("../../../include/rumus-month-text.php"); ?>">
-
-											<input hidden id="thn_terbilang" name="thn_terbilang" type="text" required="" value="<?= terbilang($thnText); ?>">
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input list="nama_satker" name="nama_satker" class="form-control input-border-bottom" required oninvalid="this.setCustomValidity('nama_satker harus diisi!')" oninput="setCustomValidity('')" placeholder=" " autocomplete="off" value="<?= $queryIdBarangJasa["nama_satker"]; ?>">
-											<label for="nama_satker" class="placeholder"><i class="bi bi-pin-map-fill"></i> Nama Satker</label>
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="nama_perusahaan" name="nama_perusahaan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_perusahaan"]; ?>">
-											<label for="nama_perusahaan" class="placeholder"><i class="bi bi-building"></i> Nama Perusahaan</label>
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="alamat_perusahaan" name="alamat_perusahaan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["alamat_perusahaan"]; ?>">
-											<label for="alamat_perusahaan" class="placeholder"><i class="bi bi-geo-alt-fill"></i> Alamat Perusahaan</label>
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="nomor_npwp" name="nomor_npwp" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["npwp"]; ?>">
-											<label for="nomor_npwp" class="placeholder"><i class="bi bi-postcard-fill"></i> Nomor NPWP</label>
-										</div>
-									</div>
 
 									<div class="form-add" hidden>
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
 											<input id="nama_pekerjaan" name="nama_pekerjaan" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["nama_pekerjaan"]; ?>">
-											<label for="nama_pekerjaan" class="placeholder"><i class="bi bi-person-video3"></i> Nama Pekerjaan</label>
+											<label for="nama_pekerjaan" class="placeholder"><i class="bi bi-person-workspace"></i> Nama Pekerjaan</label>
+										</div>
+									</div>
+
+									<div class="form-add">
+										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+											<label for="tgl_terbit"><i class="bi bi-calendar2-date-fill"></i> Tanggal Terbit Memo</label>
+											<input id="tgl_terbit" name="tgl_terbit" type="date" class="form-control input-border-bottom" required="">
 										</div>
 									</div>
 
@@ -254,69 +204,26 @@ include("../../../include/seo.php");
 
 									<div class="form-add">
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="kode_rup" name="kode_rup" type="text" class="form-control input-border-bottom" required="">
-											<label for="kode_rup" class="placeholder"><i class="bi bi-2-square-fill"></i> Kode RUP</label>
+											<label for="tgl_permintaan"><i class="bi bi-calendar2-date-fill"></i> Tanggal Permintaan (SM)</label>
+											<input id="tgl_permintaan" name="tgl_permintaan" type="date" class="form-control input-border-bottom" required="">
+										</div>
+									</div>
+
+									<div class="form-add">
+										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
+											<input id="fungsi" name="fungsi" type="text" class="form-control input-border-bottom" required="">
+											<label for="fungsi" class="placeholder"><i class="bi bi-journal-text"></i> Fungsi</label>
 										</div>
 									</div>
 
 									<div class="form-add" hidden>
 										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="jmlh_penawaran" name="harga_penawaran" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["jmlh_penawaran"]; ?>">
-											<label for="jmlh_penawaran" class="placeholder"><i class="bi bi-cash-stack"></i> Harga Penawaran</label>
-										</div>
-									</div>
-
-									<?php if ($queryIdBarangJasa["ppn"] === "0") : ?>
-										<div class="form-add" hidden>
-											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="jmlh_negosiasi" name="harga_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
-												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
-											</div>
-										</div>
-									<?php endif; ?>
-
-									<?php if ($queryIdBarangJasa["ppn"] === "1") : ?>
-										<div class="form-add" hidden>
-											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="jmlh_negosiasi" name="harga_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= (11 / 100) * $queryIdBarangJasa["jmlh_negosiasi"] + $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
-												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
-											</div>
-										</div>
-									<?php endif; ?>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<input id="nomor_dipa" name="nomor_dipa" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["no_dipa"]; ?>">
-											<label for="nomor_dipa" class="placeholder"><i class="bi bi-card-text"></i> Nomor DIPA</label>
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<label for="tgl_dipa"><i class="bi bi-calendar2-date-fill"></i> Tanggal DIPA</label>
-											<input id="tgl_dipa" name="tgl_dipa" type="date" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["tgl_dipa"]; ?>">
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<select name="nama_pp" id="nama_pp" class="form-control input-border-bottom" required oninvalid="this.setCustomValidity('Bidang ini harus diisi!')" oninput="setCustomValidity('')" placeholder=" " autocomplete="off">
-												<option value="<?= $queryIdBarangJasa["nama_pp"]; ?>">
-													<?= $queryIdBarangJasa["nama_pp"]; ?>
+											<select name="nama_ppk" id="nama_ppk" class="form-control input-border-bottom" required oninvalid="this.setCustomValidity('Bidang ini harus diisi!')" oninput="setCustomValidity('')" placeholder=" " autocomplete="off">
+												<option value="<?= $queryIdBarangJasa["nama_ppk"]; ?>">
+													<?= $queryIdBarangJasa["nama_ppk"]; ?>
 												</option>
 											</select>
-											<label for="nama_pp" class="placeholder"><i class="bi bi-person-fill"></i> Nama PP</label>
-										</div>
-									</div>
-
-									<div class="form-add" hidden>
-										<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-											<select name="nip" id="nip" class="form-control input-border-bottom" required oninvalid="this.setCustomValidity('Bidang ini harus diisi!')" oninput="setCustomValidity('')" placeholder=" " autocomplete="off">
-												<option value="<?= $queryIdBarangJasa["nip_pp"]; ?>">
-													<?= $queryIdBarangJasa["nip_pp"]; ?>
-												</option>
-											</select>
-											<label for="nip" class="placeholder"><i class="bi bi-person-fill"></i> NIP <sup>PP</sup></label>
+											<label for="nama_ppk" class="placeholder"><i class="bi bi-person-fill"></i> Nama PPK</label>
 										</div>
 									</div>
 
@@ -324,7 +231,7 @@ include("../../../include/seo.php");
 
 									<div class="card-body row">
 										<div class="form-group btn-form form-floating-label col-sm-6 mb-3 mb-sm-0">
-											<button type="submit" name="bahp" class="btn bg-skb-3">SIMPAN <i class="fa fa-save"></i></button>
+											<button type="submit" name="memo" id="clickBtn" class="btn bg-skb-3">SIMPAN <i class="fa fa-save"></i></button>
 											<button type="reset" class="btn bg-skb-1">RESET <i class="fa fa-times"></i></button>
 											<a href="javascript:window.history.go(-1);" class="btn bg-skb-6">BATAL</a>
 										</div>
@@ -403,6 +310,8 @@ include("../../../include/seo.php");
 	<script src="../../assets/js/setting-demo.js"></script>
 	<script src="../../assets/js/demo.js"></script>
 
+
+
 	<script>
 		$(document).ready(function() {
 			$('#basic-datatables').DataTable({});
@@ -451,8 +360,6 @@ include("../../../include/seo.php");
 		});
 	</script>
 
-	<!-- Format Rupiah -->
-	<script src="../../../assets/js/rupiah-format.js"></script>
 
 
 </body>

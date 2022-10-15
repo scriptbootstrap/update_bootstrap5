@@ -255,7 +255,7 @@ include("../../../include/seo.php");
 									<?php if ($queryIdBarangJasa["ppn"] === "0") : ?>
 										<div class="form-add" hidden>
 											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= number_format($queryIdBarangJasa["harga_satuan"] * $queryIdBarangJasa["vol"], 0, ',', '.'); ?>">
+												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
 												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
 											</div>
 										</div>
@@ -264,7 +264,7 @@ include("../../../include/seo.php");
 									<?php if ($queryIdBarangJasa["ppn"] === "1") : ?>
 										<div class="form-add" hidden>
 											<div class="form-group form-floating-label col-sm-6 mb-2 mb-sm-0">
-												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?php include("_rounded.php"); ?>">
+												<input id="jmlh_negosiasi" name="jmlh_negosiasi" type="text" class="form-control input-border-bottom" required="" value="<?= (11 / 100) * $queryIdBarangJasa["jmlh_negosiasi"] + $queryIdBarangJasa["jmlh_negosiasi"]; ?>">
 												<label for="jmlh_negosiasi" class="placeholder"><i class="bi bi-cash"></i> Jumlah Negosiasi</label>
 											</div>
 										</div>
